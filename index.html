@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>GoWhere</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    <script src="js/app.js"></script>           
+    <script src="js/init-app.js"></script>      
+    <script src="xdk/init-dev.js"></script>
+
+    
+    <script type="text/javascript">
+        var datefield=document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"           />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
+        }
+    </script>
+    <script>
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+        $('#Ddate').datepicker();
+        })
+        }
+    </script>
+    <script>
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+        $('#Adate').datepicker();
+        })
+        }
+    </script>
+    
+    
+</head>
+
+
+<body>
+    <div id="box">
+        
+        <label for="default">Select your destination</label><br>
+        <input type="text" id="ajax" list="json-datalist" placeholder="e.g. Bangkok" size="45">
+        <datalist id="json-datalist"></datalist>
+        
+        <div id="date">
+        <form>
+            <b>Going Off</b>
+            <input type="date" id="Ddate" name="Dday" size="10" />
+        </form>
+        <form>
+            <b>Coming Home</b>
+            <input type="date" id="Adate" name="Aday" size="10" />
+        </form>
+        </div>
+        
+        <input type="submit" value="Submit">
+        
+    </div>
+    
+
+</body>
+</html>
