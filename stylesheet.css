@@ -5,14 +5,15 @@ html {
 
 #box{
     background-color: azure;
-    height:23em;
+    height:24em;
     width:50em;
     margin-left: auto;
     margin-right: auto;
-    margin-top:3em;
+    margin-top:2em;
     border-radius: 25px;
     border:none;
     opacity: 0.7;
+    padding: 0.5em;
 }
 
 
@@ -24,7 +25,6 @@ html {
 
 #dest_font{
     font-family: cursive;
-    padding-top: 1em;
     font-weight: 10em;
 }
 
@@ -41,23 +41,16 @@ html {
 }
 
 #A{
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-bottom: 2em;
 }
 
-#header{
-    width: 60%;
-    background-color:azure;
-    height: 2.5em;
-    border-radius: 10px;
-    opacity:0.7;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #login_btn{
-    position:relative;
-    top:-2em;
+    position: relative;
+    margin-left: 16em;
+    margin-right: auto;
+    display: inline-block;
+    top:-6em;
 }
 
 body{
@@ -66,10 +59,11 @@ body{
 
 #social{
     position: relative;
-    top:-4em;
+    top:-5.5em;
 }
 
 #submit{
     position: relative;
-    top: -6em;
+    margin-right: 13em;
 }
+

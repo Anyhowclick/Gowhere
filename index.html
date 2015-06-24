@@ -5,6 +5,8 @@
   -->
 <head>
     
+    <title>GoWhere</title>
+    
     <meta property="og:url"
     content="http://aloy-wee-sious.github.io/GoWhere/" />
     <meta property="og:type"               content="article" />
@@ -13,54 +15,54 @@
     content="Oversea trips have never been so easy" />
     <meta property="og:image"
     content="http://angeltouchtravels.com/wp-content/uploads/2015/06/travel.jpg" />
-    
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>GoWhere</title>
-    <script src="js/jquery-1.11.3.min.js"></script>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-
     scalable=no">
+    
+    <link rel="stylesheet" href="stylesheet.css">
     <style>
-    @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ;  
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width:               100vw;  
         min-zoom: 100% zoom: 100% ; }
         @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }               @viewport { user-zoom: fixed 
         ; min-zoom: 100% ; }
     </style>
     <link rel="stylesheet" href="css/app.css">
+    
+    <script src="js/jquery-1.11.3.min.js"></script>
     <script src="cordova.js" id="xdkJScordova_"></script>
     <script src="js/app.js"></script>           
     <script src="js/init-app.js"></script>      
     <script src="xdk/init-dev.js"></script>
-
+    <script src="js/validation.js"></script>
     
     <script type="text/javascript">
         var datefield=document.createElement("input")
         datefield.setAttribute("type", "date")
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"           />\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for             jQuery UI Date Picker
+            document.write('<link                                                                                   href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"                       rel="stylesheet" type="text/css"           />\n')
+            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">             <\/script>\n')
+            document.write('<script src=                                                                             "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
         }
     </script>
     <script>
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-        jQuery(function($){ //on document.ready
-        $('#Ddate').datepicker();
-        })
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date             picker widget:
+            jQuery(function($){ //on document.ready
+            $('#Ddate').datepicker();
+            })
         }
     </script>
+    
     <script>
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-        jQuery(function($){ //on document.ready
-        $('#Adate').datepicker();
-        })
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date             picker widget:
+            jQuery(function($){ //on document.ready
+                $('#Adate').datepicker();
+            })
         }
     </script>
-    
-    
 </head>
 
-
+    <img src="images/Logo.png" style="opacity:0.85">
+    
 <body>
     <script>
         function statusChangeCallback(response) {
@@ -92,61 +94,41 @@
             statusChangeCallback(response);
             });
         };
-</script>
-    
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1620196604924021";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-        <div id="header"></div>
-        <div id=login_btn>
-            <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false"                data-auto-logout-link="true">Login</div>
-                <div id="status"></div>
-        </div>
-
-    
+    </script>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1620196604924021";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+        <!--<div id="header"></div>-->
+    <form onsubmit="return validateForm()" method="post">
         <div id="box">
             <h1 id="dest_font">Select your destination</h1><br>
-            <input type="text" id="ajax" list="json-datalist" placeholder="e.g. Bangkok" size="45">
+            <input type="text" id="ajax" list="json-datalist" placeholder="e.g. Bangkok" size="45"                   style="border:2px solid #6D6D64" required=require>
             <datalist id="json-datalist"></datalist>    
-        
             <div id="date">
-                <form>
-                    <b>Going Off</b>
-                    <input type="date" id="Ddate" name="Dday" size="12" />
-                </form>
-            
+                <b>Going Off</b>
+                <input type="date" id="Ddate" name="Dday" size="12" style="border:2px solid #6D6D64"                     required pattern="\d{1,2}/\d{1,2}/\d{4}" />
                 <div id="A">
-                    <form>
-                        <b>Coming Home</b>
-                        <input type="date" id="Adate" name="Aday" size="12" />
-                    </form>
+                    <b>Coming Home</b>
+                    <input type="date" id="Adate" name="Aday" size="12" style="border:2px solid                             #6D6D64" required pattern="\d{1,2}/\d{1,2}/\d{4}" />
                 </div>
             </div>         
         </div>
         
-        <input id="submit" type="submit" value="Go There" size="20"><br>   
         
-        <div id="social"
-            class="fb-like"
-            data-share="true"
-            data-width="450"
-            data-show-faces="false">
+        <div id=login_btn>
+            <input id="submit" type="submit" value="Go There" size="20">
+            <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false"                 data-auto-logout-link="true">Login</div>
+            <div id="status"></div>
         </div>
-    
-    
-    
-    
-</body>
+    </form>
+    <br>           
+    <div id="social" class="fb-like" data-share="true" data-width="450" data-show-faces="false"></div>
+    </body>
 </html>

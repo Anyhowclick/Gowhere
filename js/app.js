@@ -75,6 +75,14 @@ request.send();
     
 };
 
+
+function validateForm() {
+    $(function() {
+        alert("test"); 
+    });
+}
+
+      
 $(document).ready(main);
 
 // ...additional event handlers here...
