@@ -4,14 +4,27 @@
   * Please see the included README.md file for license terms and conditions.
   -->
 <head>
+    
+    <meta property="og:url"
+    content="http://aloy-wee-sious.github.io/GoWhere/" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Going somewhere?" />
+    <meta property="og:description"
+    content="Oversea trips have never been so easy" />
+    <meta property="og:image"
+    content="http://angeltouchtravels.com/wp-content/uploads/2015/06/travel.jpg" />
+    
     <link rel="stylesheet" href="stylesheet.css">
     <title>GoWhere</title>
     <script src="js/jquery-1.11.3.min.js"></script>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-
+    scalable=no">
     <style>
-        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
-        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ;  
+        min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }               @viewport { user-zoom: fixed 
+        ; min-zoom: 100% ; }
     </style>
     <link rel="stylesheet" href="css/app.css">
     <script src="cordova.js" id="xdkJScordova_"></script>
@@ -63,13 +76,11 @@
                 'into Facebook.';
             }
         }
-
         function checkLoginState() {
             FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
             });
         }
-
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '1446657188970862',
@@ -77,14 +88,10 @@
                 xfbml      : true,  
                 version    : 'v2.2' 
             });
-
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
             });
-
         };
-
-
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -92,7 +99,6 @@
             js.src = "http://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-
         function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
