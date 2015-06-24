@@ -24,9 +24,9 @@
 
 var main = function(){
 
-    $(function() {
+    /*$(function() {
         alert("test"); 
-    });
+    });*/
     
     
     // Get the <datalist> and <input> elements.
